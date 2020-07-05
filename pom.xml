@@ -82,6 +82,12 @@
       <scope>runtime</scope>
     </dependency>
 
+      <dependency>
+          <groupId>de.invesdwin</groupId>
+          <artifactId>invesdwin-instrument</artifactId>
+          <version>1.0.8</version><!---project.version.invesdwin-instrument-->
+      </dependency>
+
     <!-- caching -->
     <dependency>
       <groupId>javax.cache</groupId>
@@ -131,6 +137,42 @@
       <artifactId>spring-boot-devtools</artifactId>
       <optional>true</optional>
     </dependency>
+
+      <dependency>
+          <groupId>net.sf.infrared</groupId>
+          <artifactId>infrared-base</artifactId>
+          <version>2.6-SNAPSHOT</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>net.sf.infrared</groupId>
+          <artifactId>infrared-agent</artifactId>
+          <version>2.6-SNAPSHOT</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>net.sf.infrared</groupId>
+          <artifactId>infrared-aspects</artifactId>
+          <version>2.6-SNAPSHOT</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
+          <groupId>net.sf.infrared</groupId>
+          <artifactId>infrared-collector</artifactId>
+          <version>2.6-SNAPSHOT</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+      <dependency>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-core</artifactId>
+          <version>3.9.0</version>
+      </dependency>
+
   </dependencies>
 
   <build>
@@ -290,6 +332,15 @@
   </licenses>
 
   <repositories>
+      <repository>
+          <id>local-repo</id>
+          <name>Local Repository</name>
+          <url>file://${user.home}/.m2/repository</url>
+          <snapshots>
+              <enabled>true</enabled>
+          </snapshots>
+      </repository>
+
     <repository>
       <id>spring-snapshots</id>
       <name>Spring Snapshots</name>
@@ -306,6 +357,10 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
+          <repository>
+              <id>invesdwin-oss</id>
+              <url>https://invesdwin.de/artifactory/invesdwin-oss-remote</url>
+          </repository>
   </repositories>
 
   <pluginRepositories>
