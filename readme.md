@@ -136,3 +136,18 @@ The Spring PetClinic sample application is released under version 2.0 of the [Ap
 [spring-petclinic-graphql]: https://github.com/spring-petclinic/spring-petclinic-graphql
 [spring-petclinic-kotlin]: https://github.com/spring-petclinic/spring-petclinic-kotlin
 [spring-petclinic-rest]: https://github.com/spring-petclinic/spring-petclinic-rest
+
+## To integrate with infrared
+### Steps:
+1) Checkout the code from https://sourceforge.net/p/infrared/code/HEAD/tree/infrared2/app/branches/experimental/
+2)  mvn install
+3) Download the tomcat and deploy the  ~/.m2/repository/net/sf/infrared/infrared-web/2.6-SNAPSHOT/infrared-web-2.6-SNAPSHOT.war to tomcat on port 8081.
+   Don't forget to change the port to 8081 in server.xml
+4) Run the pet-linic
+```
+./mvnw spring-boot:run
+```
+5) Start the tomcat
+6) go to http://localhost:8080/ in
+7) go to http://localhost:8081/infrared-web-2.6-SNAPSHOT/perfData_summaryAction.do
+
